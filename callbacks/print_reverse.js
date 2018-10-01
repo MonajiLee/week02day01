@@ -1,0 +1,1 @@
+var getHTML = require('../html-chunks-with-callbacks');
