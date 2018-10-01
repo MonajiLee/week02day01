@@ -29,3 +29,20 @@ function getHTML (options, callback) {
   };
 
 getHTML(requestOptions, printer);
+
+module.exports = function getHTML (options, callback) {
+    /* Your code here */
+    https.get(options, function(response){
+        
+        response.setEncoding('utf8');
+        
+        response.on('data', function(data){
+            let datavar = data;
+            callback(datavar);
+        });
+    
+        response.on('end', function(){
+            console.log('Response stream complete.')
+        })
+    });
+};
