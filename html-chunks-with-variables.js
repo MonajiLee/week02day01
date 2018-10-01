@@ -12,7 +12,7 @@ function getAndPrintHTML () {
         response.setEncoding('utf8');
         
         response.on('data', function(data){
-            let datavar = data.length;
+            let datavar = data;
             console.log(datavar);
         });
     
